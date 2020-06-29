@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hopstack.io</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <style>
+#myDIV1 {display: block;
+    margin: auto;
+    border: 3px solid green;
+    padding: 20px;
+  background-color: white;
+  margin-top: 20px;
+}
+#myDIV {display: block;
+    margin: auto;
+    border: 3px solid green;
+    padding: 20px;
+  background-color: white;
+  margin-top: 20px;
+}
+.bg{
+    background-image: url({{ url_for('static', filename='Hopstack Logo.png') }});
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-size: cover;
+}
+</style> 
+
+  </head>
+  <body style="height: 100%;
+  margin: 0;" class="bg">
+    <div >
+    <div class="container-fluid">
+	<div class="row" >
+		<div class="col-md-12">
+		<h1 style="text-align:center">Mask Detection System</h1>
+			<div class="row">
+    			
+				<div class="col-md-6" style="text-align:center">
+    				<div class="col-md-12" id ="myDIV" style="display:none">
+    				<h2>VGG16 Mask Detection </h2>
+					<img  src="{{ url_for('video_feed') }}" >
+					</div>
+						<button onclick="myFunctionVGG16()" class="btn btn-primary">
+							VGG16 Mask Detection
+						</button>
+				</div>
+				<div class="col-md-6" style="text-align:center">
+					<div class= "col-md-12" id ="myDIV1" style="display:none">
+                    <h2> MobileNet Mask Detection </h2>
+                    <img id="" src="{{ url_for('video_feedd') }}" style="">
+                    </div>
+						<button onclick="myFunctionMobilenet()" class="btn btn-primary">
+							MobileNet Mask Detection
+						</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script>
+function myFunctionVGG16() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function myFunctionMobilenet() {
+  var x = document.getElementById("myDIV1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/scripts.js"></script>
+  </body>
+</html>
